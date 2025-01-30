@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="loading-container">
+        <div id="background-container"></div> <!-- P7e25 -->
 
         <h1>MX-Scripts</h1> <!-- Your ServerName -->
 
@@ -131,8 +132,23 @@
             </a>
           </div>
 
-        
+        <script>
+            const backgrounds = [
+                'assets/images/background1.jpg',
+                'assets/images/background2.jpg',
+                'assets/images/background3.jpg',
+                'assets/images/background4.jpg'
+            ];
 
+            let currentBackgroundIndex = 0;
+
+            function changeBackground() {
+                currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
+                document.getElementById('background-container').style.backgroundImage = `url(${backgrounds[currentBackgroundIndex]})`;
+            }
+
+            setInterval(changeBackground, 10000);
+        </script> <!-- P3a58 -->
 
     <!-- JavaScript File -->
     <script src="js/script.js"></script>

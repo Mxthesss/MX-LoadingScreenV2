@@ -17,6 +17,7 @@ body, html {
   background: linear-gradient(135deg, #1E1E3C, #2c3e50, #bdc3c7); 
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: backgroundChange 10s infinite;
 }
 
 
@@ -401,5 +402,10 @@ ul {
   margin-top: 5px; 
 }
 
-
-
+@keyframes backgroundChange {
+  0% { background: url('assets/images/background1.jpg') no-repeat center center fixed; }
+  25% { background: url('assets/images/background2.jpg') no-repeat center center fixed; }
+  50% { background: url('assets/images/background3.jpg') no-repeat center center fixed; }
+  75% { background: url('assets/images/background4.jpg') no-repeat center center fixed; }
+  100% { background: url('assets/images/background1.jpg') no-repeat center center fixed; }
+}
