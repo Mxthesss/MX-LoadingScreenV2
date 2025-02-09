@@ -1,5 +1,5 @@
 local function CheckVersion()
-    PerformHttpRequest('https://raw.githubusercontent.com/Mxthesss/VersionCheckerMX-SCRIPTS/main/MX-LoadingScreen.txt', function(err, newestVersion, headers)
+    PerformHttpRequest('https://raw.githubusercontent.com/Mxthesss/VersionCheckerMX-SCRIPTS/main/MX-LoadingScreenV2.txt', function(err, newestVersion, headers)
     	local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version')
         local resourcename = "MX-LoadingScreen"
         local howto = "Download new version on your KeyMaster"
