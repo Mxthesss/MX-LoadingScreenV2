@@ -1,34 +1,24 @@
-function playAudio() {
-    const audio = document.getElementById('audio');
-    audio.play();
-    document.getElementById('play-btn').style.display = 'none';
-    document.getElementById('pause-btn').style.display = 'inline-block';
-    document.getElementById('stop-btn').style.display = 'inline-block';
-}
-
-function pauseAudio() {
-    const audio = document.getElementById('audio');
-    audio.pause();
-    document.getElementById('play-btn').style.display = 'inline-block';
-    document.getElementById('pause-btn').style.display = 'none';
-}
-
-function stopAudio() {
-    const audio = document.getElementById('audio');
-    audio.pause();
-    audio.currentTime = 0;
-    document.getElementById('play-btn').style.display = 'inline-block';
-    document.getElementById('pause-btn').style.display = 'none';
-    document.getElementById('stop-btn').style.display = 'none';
-}
-
+/* Function to set volume */
 function setVolume() {
     const audio = document.getElementById('audio');
     const volume = document.getElementById('volume-slider').value;
     audio.volume = volume / 100;
 }
 
+/* Function to stop audio with SPACE key */
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+        const audio = document.getElementById('audio');
+        if (!audio.paused) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    }
+});
+
+/* On window load, set initial volume and play audio */
 window.onload = function() {
-    document.getElementById('pause-btn').style.display = 'none';
-    document.getElementById('stop-btn').style.display = 'none';
+    const audio = document.getElementById('audio');
+    setVolume();
+    audio.play();
 };

@@ -8,41 +8,50 @@
 </head>
 <body>
     <div id="loading-container">
+        <!-- Background container for changing background images -->
         <div id="background-container"></div>
         <div id="logo-container">
+            <!-- Logo with link to Discord -->
             <a href="https://discord.gg/7uEqUMvyUQ" target="_blank" rel="noopener">
                 <img src="assets/images/polarbear.png" alt="Logo" id="logo">
             </a>
+            <!-- Updates hover bubble -->
             <div class="hover-bubble" id="updates-hover">
                 Updates
                 <div class="bubble-content" id="updates">
                     <div class="card">
                         <h2>Current Changes</h2>
-                        <p>‣  Updated the design and layout of the loading screen.</p>
-                        <p>‣  Improved background animations and transitions.</p>
-                        <p>‣  Added better control functionality for audio playback.</p>
+                        <p>Updated the design and layout of the loading screen.</p>
+                        <p>Improved background animations and transitions.</p>
+                        <p>Added better control functionality for audio playback.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="server-name">
-            <h1>MX-Scripts</h1>
+        <!-- Server name and ROLEPLAY text with hover effect to change to logo image -->
+        <div id="server-name-container">
+            <div id="server-name">
+                <h1>MX-Scripts</h1>
+                <h2>ROLEPLAY</h2>
+                <img src="assets/images/serverlogo.png" alt="Server Logo" id="server-logo">
+            </div>
         </div>
-        <!-- Player Controls Section -->
-        <div id="player-controls">
-            <button id="play-btn" onclick="playAudio()">Play</button>
-            <button id="pause-btn" onclick="pauseAudio()">Pause</button>
-            <button id="stop-btn" onclick="stopAudio()">Stop</button>
+        <!-- Volume control section -->
+        <div id="volume-control">
             <input type="range" id="volume-slider" min="0" max="100" value="50" onchange="setVolume()">
         </div>
-
-        <!-- Loading Bar -->
+        <!-- Press SPACE to stop music text -->
+        <div id="press-space">
+            <p>Press <span>SPACE</span> to stop music...</p>
+        </div>
+        <!-- Loading bar section -->
         <div id="loading-bar">
             <div id="loading-progress"></div>
         </div>
     </div>
-
-    <!-- JavaScript File -->
-    <script src="script.js"></script>
+    <!-- Audio element -->
+    <audio id="audio" src="assets/song/song.mp3" preload="auto" autoplay loop></audio>
+    <!-- JavaScript file for functionality -->
+    <script src="js/script.js"></script>
 </body>
 </html>

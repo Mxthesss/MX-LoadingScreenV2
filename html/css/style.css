@@ -1,3 +1,4 @@
+/* Basic styles for body and html */
 body, html {
   margin: 0;
   padding: 0;
@@ -7,12 +8,13 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #1E1E3C, #2c3e50, #bdc3c7);
   color: #ffffff;
   overflow: hidden;
   position: relative;
+  /* background: linear-gradient(135deg, #1E1E3C, #2c3e50, #bdc3c7); /* Fallback background */
 }
 
+/* Container for the loading screen */
 #loading-container {
   text-align: center;
   width: 100%;
@@ -20,6 +22,7 @@ body, html {
   position: relative;
 }
 
+/* Background container for changing background images */
 #background-container {
   position: absolute;
   top: 0;
@@ -29,16 +32,17 @@ body, html {
   background-size: cover;
   background-position: center;
   z-index: -1;
-  animation: changeBackground 30s infinite;
+  animation: changeBackground 60s infinite;
 }
 
 @keyframes changeBackground {
-  0% { background-image: url('assets/images/background1.jpg'); }
-  33% { background-image: url('assets/images/background2.jpg'); }
-  66% { background-image: url('assets/images/background3.jpg'); }
-  100% { background-image: url('assets/images/background1.jpg'); }
+  0% { background-image: url('../assets/images/background1.jpg'); }
+  33% { background-image: url('../assets/images/background2.jpg'); }
+  66% { background-image: url('../assets/images/background3.jpg'); }
+  100% { background-image: url('../assets/images/background1.jpg'); }
 }
 
+/* Logo container with hover effect */
 #logo-container {
   position: absolute;
   top: 20px;
@@ -58,6 +62,7 @@ body, html {
   transform: scale(1.5); 
 }
 
+/* Hover bubble for updates */
 .hover-bubble {
   position: relative;
   display: inline-block;
@@ -67,6 +72,13 @@ body, html {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-bubble:hover {
+  background: #3399ff;
+  color: #333;
+  box-shadow: 0 0 10px rgba(51, 153, 255, 0.7);
 }
 
 .bubble-content {
@@ -75,62 +87,120 @@ body, html {
   top: 50px;
   left: 0;
   width: 300px;
-  background: rgba(0, 0, 0, 0.8);
+  background: #000;
+  color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   z-index: 10;
+  transition: opacity 0.3s ease;
 }
 
 .hover-bubble:hover .bubble-content {
   display: block;
+  opacity: 1;
+}
+
+/* Server name and ROLEPLAY text with folding effect on hover */
+#server-name-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 #server-name {
-  margin-top: 100px;
-  transition: transform 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+#server-name h1, #server-name h2 {
+  font-family: 'Helvetica', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.6s ease;
 }
 
 #server-name h1 {
   font-size: 3em;
-  font-family: 'Helvetica', sans-serif;
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-#server-name h1:hover {
-  transform: rotateX(90deg);
+#server-name h2 {
+  font-size: 2em;
+  color: #3399ff;
+  margin-top: 0;
 }
 
-#server-name h1:hover::after {
-  content: url('assets/images/polarbear.png');
+#server-name img {
+  display: none;
+  width: 200px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.6s ease;
+}
+
+#server-name:hover h1, #server-name:hover h2 {
+  opacity: 0;
+}
+
+#server-name:hover img {
   display: block;
-  margin-top: 10px;
+  opacity: 1;
 }
 
-#player-controls {
+/* Volume control section */
+#volume-control {
   position: absolute;
   bottom: 40px;
   right: 20px;
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-#player-controls button {
+#volume-control input[type="range"] {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 5px;
   background: #333;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  margin: 0 5px;
-  cursor: pointer;
   border-radius: 5px;
-}
-
-#player-controls input[type="range"] {
-  margin-left: 10px;
   cursor: pointer;
 }
 
+#volume-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #3399ff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Press SPACE to stop music text */
+#press-space {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#press-space p {
+  font-size: 1.5em;
+  font-family: 'Helvetica', sans-serif;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#press-space span {
+  color: #3399ff;
+}
+
+/* Loading bar section */
 #loading-bar {
   position: absolute;
   bottom: 0;
