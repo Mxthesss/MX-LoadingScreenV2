@@ -1,4 +1,4 @@
-# MX-LoadingScreen
+# MX-LoadingScreenV2
 
 # :screwdriver: MX-LoadingScreen v1.0
 
