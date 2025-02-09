@@ -1,6 +1,6 @@
 # MX-LoadingScreenV2
 
-## :screwdriver: MX-LoadingScreen v1.0
+## :screwdriver: MX-LoadingScreenV2 v1.0
 
 ### :pencil2: Description
 
