@@ -15,6 +15,7 @@
 ### :link: Links
 
 - [Discord](https://discord.gg/JU8tDJrmDM)
+- [Other scripts](https://mx-scripts.tebex.io/)
 - [Preview](https://youtu.be/xueQn7zTnwI)
 - [DOCS](https://mxthess.gitbook.io/mx-scripts/)
 
